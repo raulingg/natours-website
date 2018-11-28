@@ -1,0 +1,43 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+$breakpoint argument choices:
+- $phone: 37.5em;
+- $tablet-portrait: 56.25em;
+- $tablet-landscape: 75em;
+- $big-desktop: 112.5em;
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint ==
+    $phone or
+    $breakpoint ==
+    $tablet-portrait or
+    $breakpoint ==
+    $tablet-landscape
+  {
+    @media only screen and (max-width: $breakpoint) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint == $big-desktop {
+    @media only screen and (min-width: $breakpoint) {
+      @content;
+    } //1800px
+  }
+}

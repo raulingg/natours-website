@@ -1,0 +1,155 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -25vh;
+
+  @include respond($tablet-portrait) {
+    padding: 20rem 0;
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  @include respond($tablet-portrait) {
+    padding: 10rem 0;
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 15rem 0 15rem 0;
+  margin-top: -10rem;
+  position: relative;
+
+  @include respond($tablet-portrait) {
+    padding: 7.5rem 0 10rem 0;
+  }
+}
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0;
+
+  @include respond($tablet-portrait) {
+    padding: 10rem 0;
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond($tablet-portrait) {
+    padding: 10rem 0;
+  }
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: 100%;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  border-radius: 3px;
+
+  @include respond($tablet-landscape) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 65%,
+        transparent 35%
+      ),
+      url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+
+  @include respond($tablet-portrait) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond($tablet-landscape) {
+      width: 65%;
+    }
+
+    @include respond($tablet-portrait) {
+      width: 100%;
+    }
+  }
+}
+
+.popup {
+  &__img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 25rem;
+    width: 100%;
+
+    @include respond($tablet-portrait) {
+      display: none;
+    }
+  }
+
+  &__text {
+    padding: 8rem 2rem;
+
+    @include respond($tablet-portrait) {
+      @include absCenter;
+      padding: 4rem;
+      width: 100%;
+    }
+  }
+
+  &__paragraph {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    -moz-column-count: 2;
+    -moz-column-gap: 2rem;
+    -moz-column-rule: 1px solid $color-grey-light-2;
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 1px solid $color-grey-light-2;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    @include respond($phone) {
+      column-count: 1;
+      column-gap: 0;
+      column-rule: 0;
+    }
+  }
+}
